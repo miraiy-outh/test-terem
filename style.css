@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+.block {
+    display: flex;
+    border: 1px solid black;
+    flex-wrap: nowrap;
+}
+
+.right-block {
+    background-color: lightcoral;
+}
+
+.left-block {
+    background-color: lightyellow;
+}
+
+.middle-block {
+    background-color: lightblue;
+    border: 1px dashed black;
+}
+
+.hidden {
+    visibility: hidden;
+}

@@ -39,4 +39,18 @@ function sendData(event) {
 
     data = JSON.stringify(data);
     dataArea.innerHTML = data;
+
+    fetch('http://localhost:3000/form-data')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert('Ответ от сервера: ' + data.message);
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
 }

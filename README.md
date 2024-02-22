@@ -8,5 +8,5 @@ cd backend
 npm run start
 ```
 ### Открыть локально:
-[1 задание]http://127.0.0.1:5500/1/index.html
-[2 задание]http://127.0.0.1:5500/2/index.html
+[1 задание](http://127.0.0.1:5500/1/index.html)
+[2 задание](http://127.0.0.1:5500/2/index.html)

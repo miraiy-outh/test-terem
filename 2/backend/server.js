@@ -10,7 +10,6 @@ const port = 3000;
 
 app.get('/form-data', (req, res) => {
     const data = req.query;
-    console.log(data);
     res.send({ message: 'Successful', data: data });
 });
 

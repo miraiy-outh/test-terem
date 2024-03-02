@@ -32,7 +32,6 @@ function sendData(event) {
         dataText += pair[0] + ': ' + pair[1] + '\n';
     }
     const url = 'http://localhost:3000/form-data?' + queryParams.toString();
-    console.log(url)
     dataArea.innerText = dataText; // Вывод текста данных в dataArea
 
     fetch(url)

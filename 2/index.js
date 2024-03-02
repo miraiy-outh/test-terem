@@ -23,24 +23,19 @@ function sendData(event) {
 
     if (inputsDanger.length > 0) return;
 
-    let data = {};
+    const formData = new FormData(form);
+    const queryParams = new URLSearchParams();
+    let dataText = '';
 
-    selects.forEach((select) => {
-        const value = select.value;
-        const id = select.id;
-        data[id] = value;
-    })
+    for (const pair of formData.entries()) {
+        queryParams.append(pair[0], pair[1]);
+        dataText += pair[0] + ': ' + pair[1] + '\n';
+    }
+    const url = 'http://localhost:3000/form-data?' + queryParams.toString();
+    console.log(url)
+    dataArea.innerText = dataText; // Вывод текста данных в dataArea
 
-    inputs.forEach((input) => {
-        const value = input.value;
-        const id = input.id;
-        data[id] = value;
-    })
-
-    data = JSON.stringify(data);
-    dataArea.innerHTML = data;
-
-    fetch('http://localhost:3000/form-data')
+    fetch(url)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -48,7 +43,7 @@ function sendData(event) {
             return response.json();
         })
         .then(data => {
-            alert('Ответ от сервера: ' + data.message);
+            alert('Ответ от сервера: ' + data.message + "\n" + JSON.stringify(data.data));
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);

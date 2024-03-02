@@ -8,6 +8,11 @@
     flex-wrap: nowrap;
 }
 
+.block-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .right-block {
     background-color: lightcoral;
 }
@@ -22,12 +27,24 @@
 }
 
 .hidden {
-    visibility: hidden;
+    display: none;
+}
+
+.reversed {
+    flex-direction: row-reverse;
 }
 
 @media (max-width: 480px) {
     .row {
         flex-direction: column;
+    }
+
+    .block-container {
+        flex-direction: column;
+    }
+
+    .reversed {
+        flex-direction: column-reverse;
     }
 
     .block {

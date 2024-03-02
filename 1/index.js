@@ -1,5 +1,6 @@
 const titleBlock = document.querySelector('.title-row');
 const colorBlock = document.querySelector('.colors-row');
+const containerBlock = document.querySelector('.block-container');
 
 const middleBlock = document.querySelector('.middle-block');
 const rightBlock = document.querySelector('.right-block');
@@ -16,9 +17,7 @@ function hideTitle() {
 }
 
 function changeBlocks() {
-    if (isSwapped) colorBlock.insertBefore(middleBlock, rightBlock);
-    else colorBlock.insertBefore(rightBlock, middleBlock);
-    isSwapped = !isSwapped;
+    containerBlock.classList.toggle('reversed');
 }
 
 window.onload = function () {

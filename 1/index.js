@@ -3,7 +3,7 @@ const colorBlock = document.querySelector('.colors-row');
 const containerBlock = document.querySelector('.block-container');
 
 const middleBlock = document.querySelector('.middle-block');
-const rightBlock = document.querySelector('.right-block');
+const leftBlock = document.querySelector('.left-block');
 let isSwapped = false;
 
 const buttonOne = document.querySelector('.button1');
@@ -17,7 +17,8 @@ function hideTitle() {
 }
 
 function changeBlocks() {
-    containerBlock.classList.toggle('reversed');
+    leftBlock.classList.toggle('second');
+    middleBlock.classList.toggle('first');
 }
 
 window.onload = function () {

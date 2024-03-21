@@ -15,6 +15,7 @@
 
 .right-block {
     background-color: lightcoral;
+    order: 3;
 }
 
 .left-block {
@@ -24,6 +25,14 @@
 .middle-block {
     background-color: lightblue;
     border: 1px dashed black;
+}
+
+.first {
+    order: 1;
+}
+
+.second {
+    order: 2;
 }
 
 .hidden {
